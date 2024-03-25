@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-4) var(--padding-8);
+    background-color: var(--bg-color-transparent);
+    color: var(--color-black);
+    box-shadow: var(--shadow-xl);
+    width: var(--width-60);
+    margin-top: var(--margin-8);
+    border-radius: var(--border-radius-6xl);
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    top: -20px;
+    left: 47%;
+    border-radius: var(--border-radius-6xl);
+    width: var(--width-100-px);
+    height: var(--height-100-px);
+}
