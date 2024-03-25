@@ -1,18 +1,16 @@
-import '../styles/header.css'
-import LOGO from '../assets/images/profile-img.png'
-import { useTheme } from '../context/ThemeContext'
-
-import { BsSun, BsMoon } from 'react-icons/bs'
+import { lazy, Suspense } from 'react'
+const Header = lazy(() => import('../partials/Header'))
 
 export default function Home() {
-
-    const { theme, toggleTheme } = useTheme()
-
     return (
-        <header>
-            <h2>ay-folio</h2>
-            <img src={LOGO} alt="logo" />
-            <a className="theme-link">{theme === 'light' ? <BsSun onClick={toggleTheme} /> : <BsMoon onClick={toggleTheme} />}</a>
-        </header>
+        <Suspense 
+            fallback={
+                <div class="loading-screen">
+                    <div class="loader"></div>
+                </div>
+            }
+        >
+        <Header />
+        </Suspense>
     )
 }

@@ -3,19 +3,24 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: var(--padding-4) var(--padding-8);
-    background-color: var(--bg-color-transparent);
-    color: var(--color-black);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-m);
     width: var(--width-60);
     margin-top: var(--margin-8);
     border-radius: var(--border-radius-6xl);
     position: relative;
 }
 
+header .link {
+    text-decoration: none;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-exo-2);
+}
+
 header img {
     position: absolute;
     top: -20px;
-    left: 47%;
+    left: 46%;
     border-radius: var(--border-radius-6xl);
     width: var(--width-100-px);
     height: var(--height-100-px);

@@ -723,11 +723,13 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     background: linear-gradient(135deg, #E0F0F0, #bbcecf);
+    color: var(--color-black);
 }
 
 #app.dark {
     /* background: linear-gradient(135deg, #0a1618, #273e46); */
     background: linear-gradient(135deg, #273e46, #0a1618);
+    color: var(--color-light-gray);
 }
 
 .theme-link {
@@ -735,65 +737,51 @@ body {
     cursor: pointer;
 }
 
-#lines {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    position: absolute;
-    width: var(--width-100);
-    height: var(--height-2-px);
-    background-color: var(--bg-color-black);
-    animation: moveLine 20s linear infinite;
+.theme-color-dark {
+    color: var(--color-black);
 }
 
-.shape {
-    position: absolute;
+.theme-color-light {
+    color: var(--color-light-gray);
+}
+
+.loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: var(--height-100-vh);
+    width: var(--width-100-vw);
+}
+
+.loader {
+    position: relative;
     width: 100px;
     height: 100px;
-    background-color: var(--bg-transparent);
-    border: 1px solid var(--bg-color-light-gray);
-    transition: transform 1s ease-in-out;
-  }
-  
-  .circle {
     border-radius: 50%;
-    left: -100px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .triangle {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid #2ecc71;
-    top: -100px;
-    left: calc(20% - 50px);
-  }
-  
-  .square {
-    left: calc(20% - 50px);
-    top: calc(50% - 50px);
-  }
-  
-  .move-right {
-    transform: translateX(80%);
-    transition: transform 1s ease-in-out;
-    animation: moveRight 6s linear infinite;
-  }
-  
-  @keyframes moveRight {
-    0% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(80%);
-    }
+    border: 10px solid transparent;
+    border-top-color: var(--color-gray);
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
     100% {
-      transform: translateX(0);
+        transform: rotate(360deg);
     }
-  }
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: var(--bg-color-light-gray);
+    top: 20px;
+    left: 20px;
+    animation: rotate 2s linear infinite reverse;
+}
 
 h1,
 h2,
