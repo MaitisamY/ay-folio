@@ -6,8 +6,9 @@ header {
     box-shadow: var(--shadow-m);
     width: var(--width-60);
     margin-top: var(--margin-8);
-    border-radius: var(--border-radius-6xl);
+    border-radius: var(--border-radius-5xl);
     position: relative;
+    z-index: 1;
 }
 
 header .link {
@@ -24,4 +25,20 @@ header img {
     border-radius: var(--border-radius-6xl);
     width: var(--width-100-px);
     height: var(--height-100-px);
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        width: var(--width-100);
+        padding: var(--padding-4) var(--padding-4);
+        box-shadow: var(--shadow-m);
+        border-radius: var(--border-radius-0);
+    }
+
+    header img {
+        top: 0;
+        left: 48%;
+        width: var(--width-60-px);
+        height: var(--height-60-px);
+    }
 }
