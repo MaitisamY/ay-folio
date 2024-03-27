@@ -783,6 +783,11 @@ body {
     animation: rotate 2s linear infinite reverse;
 }
 
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    animation: pulse 0.5s ease-in-out;
+}
+
 h1,
 h2,
 h3,
