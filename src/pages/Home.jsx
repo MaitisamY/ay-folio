@@ -1,64 +1,70 @@
-/* eslint-disable react/no-unknown-property */
-import { lazy, Suspense } from 'react'
-const Header = lazy(() => import('../partials/Header'))
-const Main = lazy(() => import('../partials/Main'))
-const IntroBlock = lazy(() => import('../components/IntroBlock'))
-const Image = lazy(() => import('../components/Image'))
-import LOGO from '../assets/profile-img.png'
-import { PROFILE } from '../data/dataStore'
-import { useTheme } from '../context/ThemeContext'
-import { Link } from 'react-router-dom'
-import { BsSun, BsMoon } from 'react-icons/bs'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from '../partials/Header';
+import Main from '../partials/Main';
+import IntroBlock from '../components/IntroBlock';
+import { PROFILE } from '../data/dataStore';
+import { useTheme } from '../context/ThemeContext';
+import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
+import '../styles/navigator.css';
 
-export default function Home() {
-    const { theme, toggleTheme } = useTheme();
-    
+function Home() {
+    const { theme } = useTheme();
+    const [slideOut, setSlideOut] = useState(false);
+    const [slideDirection, setSlideDirection] = useState('left'); 
+    const navigate = useNavigate();
+
+    const handleNavigate = (path) => {
+        setSlideDirection(path === '/contact' ? 'right' : 'left'); 
+        setSlideOut(true);
+        setTimeout(() => {
+            navigate(path);
+        }, 500);
+    };
+
+    document.title = `Home - ${PROFILE[0].name}`;
+
     return (
-        <Suspense 
-            fallback={
-                <div className="loading-screen">
-                    <div className="loader"></div>
-                </div>
-            }
-        >
-        <Header>
-            <Link to="/" className={`link ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`}>
-                {`{ay-folio}`}
-            </Link>
-            <Image image={LOGO} altText="logo" />
-            <a className="theme-link" onClick={toggleTheme}>
-                {theme === 'light' ? <BsSun size={24} /> : <BsMoon size={24} />}
-            </a>
-        </Header>
-        <Main>
-            <IntroBlock>
-            {
-                PROFILE.map((profile, index) => (
-                    <h1 key={index}>
-                        I'm {profile.name} <br /> 
-                        <span className={
-                            theme === 'light' 
-                            ? 'theme-bg-dark theme-color-light' 
-                            : 'theme-bg-light theme-color-dark'
+        <div className={`page-container fadeIn ${slideOut ? `slide-out-${slideDirection}` : ''}`}>
+            <Header />
+            <Main>
+                <IntroBlock>
+                    <h1>
+                        {`I'm`} {PROFILE[0].name} <br />
+                        <span
+                            className={
+                                theme === 'light'
+                                    ? 'theme-bg-dark theme-color-light'
+                                    : 'theme-bg-light theme-color-dark'
                             }
                         >
-                            a {profile.role}
+                            a {PROFILE[0].role}
                         </span>
                     </h1>
-                ))
-            }
-            </IntroBlock>
-            <IntroBlock>
-            {
-                PROFILE.map((profile, index) => (
-                    <>
-                        <p key={index}>{`< ${profile.description[0]} />`}</p>
-                        <p key={index}>{profile.description[1]}</p>
-                    </>
-                ))
-            }    
-            </IntroBlock>
-        </Main>
-        </Suspense>
+                </IntroBlock>
+                <IntroBlock>
+                    <p>{`< ${PROFILE[0].description[0]} />`}</p>
+                    <p>{PROFILE[0].description[1]}</p>
+                </IntroBlock>
+            </Main>
+            {!slideOut && (
+                <>
+                    <a
+                        className={`navigator-left ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`}
+                        onClick={() => handleNavigate('/contact')}
+                    >
+                        <span><BsChevronLeft size={60} /></span> Contact
+                    </a>
+                    <a
+                        className={`navigator-right ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`}
+                        onClick={() => handleNavigate('/projects')}
+                    >
+                        Projects <span><BsChevronRight size={60} /></span>
+                    </a>
+                </>
+            )}
+        </div>
     )
 }
+
+export default Home;
