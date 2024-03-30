@@ -1,13 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom'
-import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs'
+import { BsBoxArrowUpRight, BsGithub, BsEye } from 'react-icons/bs'
 import { useTheme } from '../context/ThemeContext'
 
 export default function ProjectCard({ 
     projectName,  
     projectImage,
     projectImageAlt,
+    projectURL,
     projectLink, 
     projectGithub,
     projectDescription
@@ -21,12 +22,10 @@ export default function ProjectCard({
 
                 <img src={`/projects/${projectImage}`} alt={projectImageAlt} />
                 <h3>{projectName}</h3>
-                <p>
-                    {projectDescription.slice(0, 60)}... 
-                    <a className={theme === 'light' ? 'theme-color-dark' : 'theme-color-light'} href={projectLink}>Read more</a>
-                </p>
+                <p>{projectDescription.slice(0, 70)}...</p>
 
                 <div className="project-card-button-holder">
+                
                     <Link 
                         to={projectLink} 
                         target="_blank"
@@ -34,10 +33,21 @@ export default function ProjectCard({
                             ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`
                         }
                         rel="noreferrer"
-                        title="View Project"
+                        title="Preview"
+                    >
+                        <BsEye size={24} />
+                    </Link>
+                    
+                    <Link 
+                        to={projectURL} 
+                        className={`link 
+                            ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`
+                        }
+                        title="Explore"
                     >
                         <BsBoxArrowUpRight size={24} />
                     </Link>
+
                     {
                         projectGithub !== 'null' && 
                         <Link 
@@ -46,6 +56,8 @@ export default function ProjectCard({
                             className={`link 
                                 ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`
                             }
+                            rel="noreferrer"
+                            title="Github repo"
                         >
                             <BsGithub size={24} />
                         </Link>

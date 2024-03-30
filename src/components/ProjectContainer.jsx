@@ -34,7 +34,8 @@ export default function ProjectContainer() {
                         projectName={project.name}
                         projectImage={project.image}
                         projectImageAlt={project.image_alt}
-                        projectLink={project.url}
+                        projectURL={project.url}
+                        projectLink={project.view_link}
                         projectGithub={project.github}
                         projectDescription={project.description}
                     />

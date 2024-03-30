@@ -54,15 +54,19 @@
     font-size: var(--font-size-xs);
     text-decoration: none;
     cursor: pointer;
-    padding: var(--padding-0);
+    padding: var(--padding-1) var(--padding-1);
     margin: var(--margin-0) var(--margin-0) var(--margin-0) var(--margin-2);
+    border-radius: var(--border-radius-xl);
+    background-color: var(--bg-color-theme-light);
+    opacity: var(--opacity-08);
+    transition: all 0.1s ease-in-out;
 }
 
 .project-card p a:hover,
 .project-card p a:active,
 .project-card p a:focus,
 .project-card p a:visited {
-    text-decoration: underline;
+    opacity: var(--opacity-10);
 }
 
 .project-card .project-card-button-holder {
