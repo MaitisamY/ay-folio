@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../partials/Header';
 import Main from '../partials/Main';
-import { PROFILE } from '../data/dataStore';
 import { useTheme } from '../context/ThemeContext';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import '../styles/navigator.css';
@@ -22,7 +21,7 @@ function Projects() {
         }, 500);
     };
 
-    document.title = `Projects - ${PROFILE[0].name}`;
+    document.title = `Projects - ${import.meta.env.VITE_SITE_TITLE}`;
 
     return (
         <div className={`page-container fadeIn ${slideOut ? `slide-out-${slideDirection}` : ''}`}>

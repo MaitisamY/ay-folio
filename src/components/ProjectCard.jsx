@@ -19,7 +19,7 @@ export default function ProjectCard({
         <>
             <div className="project-card">
 
-                <img src={projectImage} alt={projectImageAlt} />
+                <img src={`/projects/${projectImage}`} alt={projectImageAlt} />
                 <h3>{projectName}</h3>
                 <p>
                     {projectDescription.slice(0, 60)}... 
@@ -39,7 +39,7 @@ export default function ProjectCard({
                         <BsBoxArrowUpRight size={24} />
                     </Link>
                     {
-                        projectGithub && 
+                        projectGithub !== 'null' && 
                         <Link 
                             to={projectGithub}
                             target="_blank" 

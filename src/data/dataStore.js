@@ -1,8 +1,4 @@
 /* IMPORTS */
-import FlashcardQuiz from '../assets/projects/flashcard-quiz.png';
-import QuoteGenerator from '../assets/projects/quote-generator.png';
-import ResumeMonster from '../assets/projects/resume-monster.png';
-import LoginSystem from '../assets/projects/login-system.png';
 
 export const PROFILE = [
     {
@@ -38,42 +34,3 @@ export const CODE_BLOCKS = {
     ]
 }
 
-export const PROJECTS = [
-    {
-        id: 1,
-        name: 'Flashcard Quiz',
-        image: FlashcardQuiz,
-        imageAlt: `Flashcard Quiz Application's image`, 
-        url: 'https://flashcard-quiz-blush.vercel.app/',
-        github: 'https://github.com/MaitisamY/flashcard-quiz',
-        description: `A simple flashcard quiz application that allows users to create accounts and test their knowledge of various topics.`
-    },
-    {
-        id: 2,
-        name: 'Quote Generator',
-        image: QuoteGenerator,
-        imageAlt: `Quote Generator Application's image`,
-        url: 'https://quote-generator-sooty-two.vercel.app/',
-        github: 'https://github.com/MaitisamY/quote-generator',
-        description: `The Quote Generator Application fetches inspirational quotes from quotable.io based on user preferences, 
-        allowing them to specify the type and quantity of quotes desired.`
-    },
-    {
-        id: 3,
-        name: 'Resume Monster',
-        image: ResumeMonster,
-        imageAlt: `Resume Monster Application's image`,
-        url: 'https://resume-monster.vercel.app/',
-        github: 'https://github.com/MaitisamY/resume-monster',
-        description: `Resume Monster is a web application that allows users to create and download resumes.`
-    },
-    {
-        id: 4,
-        name: 'AuthSpot',
-        image: LoginSystem,
-        imageAlt: `AuthSpot Application's image`,
-        url: 'https://auth-spot.vercel.app/',
-        github: '',
-        description: `AuthSpot is made to access your account with ease. Login and Signup solution built with React.`
-    }
-]

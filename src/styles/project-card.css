@@ -54,7 +54,8 @@
     font-size: var(--font-size-xs);
     text-decoration: none;
     cursor: pointer;
-    padding: var(--padding-0) var(--padding-0) var(--padding-2) var(--padding-2);
+    padding: var(--padding-0);
+    margin: var(--margin-0) var(--margin-0) var(--margin-0) var(--margin-2);
 }
 
 .project-card p a:hover,
@@ -77,7 +78,7 @@
 .project-card .project-card-button-holder .link {
     text-decoration: none;
     cursor: pointer;
-    padding: var(--padding-1) var(--padding-8);
+    padding: var(--padding-1);
     /* border-radius: var(--border-radius-xl);
     box-shadow: var(--shadow-s); */
     transition: all 0.2s ease-in-out;
@@ -86,6 +87,6 @@
 
 .project-card .project-card-button-holder .link:hover {
     opacity: var(--opacity-10);
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 

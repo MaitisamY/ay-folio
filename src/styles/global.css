@@ -1215,6 +1215,17 @@ body {
     animation: rotate 1s linear infinite;
 }
 
+.mini-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: var(--height-100);
+    width: var(--width-100);
+    font-family: var(--font-nanum-gothic-coding);
+    font-size: var(--font-size-xl);
+}
+
 code {
     position: absolute;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
