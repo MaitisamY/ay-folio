@@ -9,6 +9,8 @@ import { useTheme } from '../context/ThemeContext';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import '../styles/navigator.css';
 
+import { PROFILE } from '../data/dataStore.js';
+
 function Home() {
     const { theme } = useTheme();
     const [slideOut, setSlideOut] = useState(false);
@@ -27,14 +29,23 @@ function Home() {
 
     useEffect(() => {
         async function getProfile() {
-            const docRef = doc(db, "admin", import.meta.env.VITE_ADMIN_ID);
-            const docSnapshot = await getDoc(docRef);
-            if (docSnapshot.exists()) {
-                setProfile({ id: docSnapshot.id, ...docSnapshot.data() });
-            } else {
-                console.log("No such document!");
+            try {
+                const docRef = doc(db, "admin", import.meta.env.VITE_ADMIN_ID);
+                const docSnapshot = await getDoc(docRef);
+                if (docSnapshot.exists()) {
+                    setProfile({ id: docSnapshot.id, ...docSnapshot.data() });
+                    console.log("Document data:", docSnapshot.data());
+                } else {
+                    console.log("No such document!");
+                    setProfile(PROFILE); // Use locally generated PROFILE data
+                    console.log("Profile:", profile);
+                }
+            } catch (error) {
+                console.error("Error fetching profile:", error);
+                setProfile(PROFILE); // Use locally generated PROFILE data
             }
         }
+    
         getProfile();
     }, []);
     

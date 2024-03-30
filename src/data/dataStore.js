@@ -34,3 +34,45 @@ export const CODE_BLOCKS = {
     ]
 }
 
+export const PROJECTS = [
+    {
+        description: "The Quote Generator Application fetches inspirational quotes from quotable.io based on user preferences, allowing them to specify the type and quantity of quotes desired.",
+        github: "https://github.com/MaitisamY/quote-generator",
+        image: "quote-generator.png",
+        image_alt: "Quote Generator Application's image",
+        name: "Quote Generator",
+        url: "https://quote-generator-sooty-two.vercel.app/",
+        view_link: "quote-generator",
+        id: '50GzRqX0R9amOWT9HMQN'
+    },
+    {
+        description: "Resume Monster is a web application that allows users to create and download resumes.",
+        github: "https://github.com/MaitisamY/resume-monster",
+        image: "resume-monster.png",
+        image_alt: "Resume Monster Application's image",
+        name: "Resume Monster",
+        url: "https://resume-monster.vercel.app/",
+        view_link: "resume-monster",
+        id: 'Scl2NPGNhZOfWXiDoO3H'
+    },
+    {
+        description: "AuthSpot is made to access your account with ease. Login and Signup solution built with React.",
+        github: null,
+        image: "login-system.png",
+        image_alt: "AuthSpot Application's image",
+        name: "AuthSpot",
+        url: "https://auth-spot.vercel.app/",
+        view_link: "auth-spot",
+        id: 'b5JBaF1vcv5kWskFvYSI'
+    },
+    {
+        description: "A simple flashcard quiz application that allows users to create accounts and test their knowledge of various topics.",
+        github: "https://github.com/MaitisamY/flashcard-quiz",
+        image: "flashcard-quiz.png",
+        image_alt: "Flashcard Quiz Application's image",
+        name: "Flashcard Quiz",
+        url: "https://flashcard-quiz-blush.vercel.app/",
+        view_link: "flashcard-quiz",
+        id: 'l90SByUeGEsWHd5BkiAz'
+    }
+]

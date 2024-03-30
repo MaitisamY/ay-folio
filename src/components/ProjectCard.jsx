@@ -1,11 +1,15 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom'
-import { BsBoxArrowUpRight, BsGithub, BsEye } from 'react-icons/bs'
+import { useState, useEffect } from 'react'
+import { Link, useParams, useNavigate } from 'react-router-dom'
+import { BsBoxArrowUpRight, BsGithub, BsPostcard } from 'react-icons/bs'
 import { useTheme } from '../context/ThemeContext'
+import { db } from '../backend/FirebaseConfig.js';
+import { doc, getDoc } from "firebase/firestore";
+import SingleProject from './SingleProject.jsx';
 
 export default function ProjectCard({ 
-    projectName,  
+    projectName,
     projectImage,
     projectImageAlt,
     projectURL,
@@ -18,7 +22,10 @@ export default function ProjectCard({
 
     return (
         <>
-            <div className="project-card">
+            <div 
+                className="project-card"
+                style={{ boxShadow: theme === 'light' ? '0 0 8px -2px rgba(0, 0, 0, 0.2)' : '0 0 8px 4px rgba(0, 0, 0, 0.2)'}}    
+            >
 
                 <img src={`/projects/${projectImage}`} alt={projectImageAlt} />
                 <h3>{projectName}</h3>
@@ -27,23 +34,23 @@ export default function ProjectCard({
                 <div className="project-card-button-holder">
                 
                     <Link 
-                        to={projectLink} 
+                        to={id} 
+                        className={`link 
+                            ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`
+                        }
+                        title="More info"
+                    >
+                        <BsPostcard size={24} />
+                    </Link>
+                    
+                    <Link 
+                        to={projectURL} 
                         target="_blank"
                         className={`link 
                             ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`
                         }
                         rel="noreferrer"
                         title="Preview"
-                    >
-                        <BsEye size={24} />
-                    </Link>
-                    
-                    <Link 
-                        to={projectURL} 
-                        className={`link 
-                            ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`
-                        }
-                        title="Explore"
                     >
                         <BsBoxArrowUpRight size={24} />
                     </Link>

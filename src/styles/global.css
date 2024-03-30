@@ -1224,6 +1224,7 @@ body {
     width: var(--width-100);
     font-family: var(--font-nanum-gothic-coding);
     font-size: var(--font-size-xl);
+    animation: pulse 0.5s infinite;
 }
 
 code {

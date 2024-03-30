@@ -9,7 +9,7 @@
     box-sizing: border-box;
     height: var(--height-auto);
     width: var(--width-100);
-    gap: 20px;
+    gap: 30px;
     margin-top: var(--margin-12);
 }
 
@@ -25,7 +25,6 @@
     width: var(--width-30);
     gap: 10px;
     border-radius: var(--border-radius-xl);
-    box-shadow: var(--shadow-s);
 }
 
 .project-card img {
@@ -92,5 +91,45 @@
 .project-card .project-card-button-holder .link:hover {
     opacity: var(--opacity-10);
     transform: scale(1.04);
+}
+
+.single-project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: var(--margin-0);
+    padding: var(--padding-0) var(--padding-0) var(--padding-4) var(--padding-0);
+    box-sizing: border-box;
+    height: var(--height-auto);
+    width: var(--width-100);
+    gap: 10px;
+    border-radius: var(--border-radius-xl);
+}
+
+.single-project-card .image-container {
+    width: 70%;
+    height: auto;
+}
+
+.single-project-card .image-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+}
+
+.single-project-card .product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: var(--margin-0);
+    padding: var(--padding-4) var(--padding-4) var(--padding-4) var(--padding-4);
+    box-sizing: border-box;
+    height: var(--height-auto);
+    width: var(--width-100);
+    gap: 10px;
+    border-radius: var(--border-radius-xl);
 }
 

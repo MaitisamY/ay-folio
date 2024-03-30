@@ -21,7 +21,7 @@ export default function ProjectContainer() {
             }
         }
         getProjects(); 
-    }, [projects]); 
+    }, []); 
 
     return (
         <div className="project-card-container">
@@ -30,7 +30,8 @@ export default function ProjectContainer() {
             ) : (
                 projects.map((project) => (
                     <ProjectCard 
-                        key={project.id} 
+                        key={project.id}
+                        id={project.id} 
                         projectName={project.name}
                         projectImage={project.image}
                         projectImageAlt={project.image_alt}
