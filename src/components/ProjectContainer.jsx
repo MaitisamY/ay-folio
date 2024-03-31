@@ -1,34 +1,46 @@
+
 import '../styles/project-card.css';
+
 import { useState, useEffect } from 'react';
 import { db } from '../backend/FirebaseConfig.js';
 import { collection, getDocs } from "firebase/firestore"; 
+
 import ProjectCard from './ProjectCard';
+import { PROJECTS } from '../data/dataStore.js';
 
 export default function ProjectContainer() {
-    const [projects, setProjects] = useState([]);
-    const [loading, setLoading] = useState(true);
+
+    const [projects, setProjects] = useState(null);
 
     useEffect(() => {
         async function getProjects() {
             try {
                 const querySnapshot = await getDocs(collection(db, "projects"));
+
+                if(querySnapshot.empty) {
+                    setProjects(PROJECTS);
+                    return;
+                }
                 const all = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
                 setProjects(all);
             } catch (error) {
-                console.error("Error fetching projects:", error);
-            } finally {
-                setLoading(false); 
+                console.error("Error fetching projects from Firestore:", error);
+                // If there's an error fetching projects from Firestore, fallback to local data
+                setProjects(PROJECTS);
             }
         }
         getProjects(); 
     }, []); 
-
+    
     return (
         <div className="project-card-container">
-            {loading ? ( 
-                <div className="mini-loader">Loading...</div>
-            ) : (
-                projects.map((project) => (
+            {
+                projects === null ? (
+                    <div className="mini-loader">
+                        <div className="loader"></div>
+                    </div>
+                ) : (
+                    projects.map((project) => (
                     <ProjectCard 
                         key={project.id}
                         id={project.id} 

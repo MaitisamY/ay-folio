@@ -1,7 +1,7 @@
 .navigator-right {
     position: absolute;
     top: var(--top-50);
-    right: var(--right-0);
+    right: var(--right-1);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -20,7 +20,7 @@
 .navigator-left {
     position: absolute;
     top: var(--top-50);
-    left: var(--left-0);
+    left: var(--left-1);
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -1,16 +1,22 @@
+
+import '../styles/navigator.css';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../partials/Header';
-import Main from '../partials/Main';
 import { useTheme } from '../context/ThemeContext';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
-import '../styles/navigator.css';
+
+import Header from '../partials/Header';
+import Main from '../partials/Main';
 import ProjectContainer from '../components/ProjectContainer';
 
 function Projects() {
+    
     const { theme } = useTheme();
+
     const [slideOut, setSlideOut] = useState(false);
     const [slideDirection, setSlideDirection] = useState('left'); 
+
     const navigate = useNavigate();
 
     const handleNavigate = (path) => {

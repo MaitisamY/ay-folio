@@ -1,4 +1,6 @@
+
 import { lazy, Suspense } from 'react'
+import { useTheme } from './context/ThemeContext'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const Home = lazy(() => import('./pages/Home'))
@@ -6,10 +8,10 @@ const Projects = lazy(() => import('./pages/Projects'))
 const Skills = lazy(() => import('./pages/Skills'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Project = lazy(() => import('./pages/Project'))
-import { useTheme } from './context/ThemeContext'
 import CodeBlock from './components/CodeBlock'
 
 export default function App() {
+    
     const { theme } = useTheme();
 
     return (

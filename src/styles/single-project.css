@@ -1,0 +1,82 @@
+.single-project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: var(--margin-8) var(--margin-0) var(--margin-0) var(--margin-0);
+    padding: var(--padding-0) var(--padding-0) var(--padding-4) var(--padding-0);
+    box-sizing: border-box;
+    height: var(--height-auto);
+    width: var(--width-100);
+    gap: 0;
+    border-radius: var(--border-radius-xl);
+}
+
+.single-project-card .image-container {
+    width: 100%;
+    height: auto;
+}
+
+.single-project-card .image-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius-xl) var(--border-radius-xl);
+}
+
+.single-project-card .product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: var(--margin-0);
+    padding: var(--padding-4) var(--padding-4) var(--padding-4) var(--padding-4);
+    box-sizing: border-box;
+    height: var(--height-auto);
+    gap: 10px;
+    border-radius: var(--border-radius-xl);
+}
+
+.single-project-card .product-details h1 {
+    font-size: var(--font-size-2xl);
+}
+
+.single-project-card .product-details p {
+    font-family: var(--font-open-sans);
+    font-size: var(--font-size-m);
+    margin: var(--margin-0) var(--margin-0) var(--margin-2) var(--margin-0);
+    clear: both;
+}
+
+.single-project-card .link-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: var(--margin-0);
+    padding: var(--padding-0);
+    box-sizing: border-box;
+    gap: 20px;
+    transform: translate(10%, -150%);
+}
+
+.single-project-card .link-holder a {
+    font-family: var(--font-open-sans);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    padding: var(--padding-1) var(--padding-5);
+    border-radius: var(--border-radius-xl);
+    opacity: var(--opacity-09);
+    transition: all 0.1s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-s);
+}
+
+.single-project-card .link-holder a:hover,
+.single-project-card .link-holder a:active,
+.single-project-card .link-holder a:focus,
+.single-project-card .link-holder a:visited {
+    opacity: var(--opacity-10);
+}

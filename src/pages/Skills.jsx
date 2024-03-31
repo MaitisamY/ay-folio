@@ -1,17 +1,24 @@
+
+import '../styles/navigator.css';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
+import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
+
 import Header from '../partials/Header';
 import Main from '../partials/Main';
 import IntroBlock from '../components/IntroBlock';
-import { PROFILE } from '../data/dataStore';
-import { useTheme } from '../context/ThemeContext';
-import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
-import '../styles/navigator.css';
+
+
 
 function Skills() {
+
     const { theme } = useTheme();
+
     const [slideOut, setSlideOut] = useState(false);
     const [slideDirection, setSlideDirection] = useState('left'); 
+    
     const navigate = useNavigate();
 
     const handleNavigate = (path) => {
@@ -22,30 +29,13 @@ function Skills() {
         }, 500);
     };
 
-    document.title = `Skills - ${PROFILE[0].name}`;
+    document.title = `Skills - ${import.meta.env.VITE_SITE_TITLE}`;
 
     return (
         <div className={`page-container fadeIn ${slideOut ? `slide-out-${slideDirection}` : ''}`}>
             <Header />
             <Main>
-                <IntroBlock>
-                    <h1>
-                        {`I'm`} {PROFILE[0].name} <br />
-                        <span
-                            className={
-                                theme === 'light'
-                                    ? 'theme-bg-dark theme-color-light'
-                                    : 'theme-bg-light theme-color-dark'
-                            }
-                        >
-                            a {PROFILE[0].role}
-                        </span>
-                    </h1>
-                </IntroBlock>
-                <IntroBlock>
-                    <p>{`< ${PROFILE[0].description[0]} />`}</p>
-                    <p>{PROFILE[0].description[1]}</p>
-                </IntroBlock>
+                
             </Main>
             {!slideOut && (
                 <>

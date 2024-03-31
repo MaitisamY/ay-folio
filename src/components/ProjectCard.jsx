@@ -1,14 +1,12 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+
 import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
-import { BsBoxArrowUpRight, BsGithub, BsPostcard } from 'react-icons/bs'
 import { useTheme } from '../context/ThemeContext'
-import { db } from '../backend/FirebaseConfig.js';
-import { doc, getDoc } from "firebase/firestore";
-import SingleProject from './SingleProject.jsx';
+
+import { BsBoxArrowUpRight, BsGithub, BsPostcard } from 'react-icons/bs'
 
 export default function ProjectCard({ 
+    id,
     projectName,
     projectImage,
     projectImageAlt,
@@ -34,7 +32,7 @@ export default function ProjectCard({
                 <div className="project-card-button-holder">
                 
                     <Link 
-                        to={id} 
+                        to={`/project/${id}`} 
                         className={`link 
                             ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`
                         }

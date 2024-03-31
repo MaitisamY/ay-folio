@@ -192,6 +192,12 @@
     }
 }
 
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 :root {
 
     /* FONT FAMILIES */
@@ -1072,6 +1078,23 @@
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: var(--bg-color-transparent);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg-color-transparent);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-color-theme-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-color-theme-dark);
+}
+
 * {
     margin: var(--margin-0);
     padding: var(--padding-0);
@@ -1101,7 +1124,10 @@ html {
     background: linear-gradient(135deg, #DFFF00, #86FBFF);
     background: linear-gradient(135deg, #FFB6C1, #FFDAB9);  */
     background: linear-gradient(135deg, #E0F0F0, #bbcecf);  
-    min-height: 100vh;
+    min-height: var(--height-100);
+    width: var(--width-100);
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
@@ -1112,6 +1138,10 @@ body {
     box-sizing: border-box;
     scroll-behavior: smooth;
     position: relative;
+    min-height: var(--height-100);
+    width: var(--width-100);
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #app {
@@ -1196,12 +1226,6 @@ body {
     animation: rotate 1s linear infinite;
 }
 
-@keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .loader::before {
     content: '';
     position: absolute;
@@ -1222,9 +1246,27 @@ body {
     flex-direction: column;
     height: var(--height-100);
     width: var(--width-100);
+}
+
+.mini-loader .loader {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: var(--height-100);
+    width: var(--width-100);
     font-family: var(--font-nanum-gothic-coding);
     font-size: var(--font-size-xl);
-    animation: pulse 0.5s infinite;
+    animation: pulse 0.5s infinite; */
+
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: var(--bg-color-theme-dark);
+    animation: rotate 1s linear infinite;
+    place-self: center;
 }
 
 code {
