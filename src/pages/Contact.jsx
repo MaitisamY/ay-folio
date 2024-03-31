@@ -8,7 +8,6 @@ import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 
 import Header from '../partials/Header';
 import Main from '../partials/Main';
-import IntroBlock from '../components/IntroBlock';
 
 
 function Contact() {
