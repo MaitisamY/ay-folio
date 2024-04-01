@@ -2,6 +2,7 @@
 import '../styles/single-project.css';
 
 import { useTheme } from '../context/ThemeContext';
+import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs';
 
 export default function SingleProject({ ...props }) {
 
@@ -26,7 +27,7 @@ export default function SingleProject({ ...props }) {
                     className={`${theme === 'light' ? 'theme-color-light theme-bg-dark' : 'theme-color-dark theme-bg-light'}`}
                     rel="noopener noreferrer"
                 >
-                    Live Demo
+                    <BsBoxArrowUpRight /> Live Demo
                 </a>
                 <a
                     href={props.projectGithub} 
@@ -34,7 +35,7 @@ export default function SingleProject({ ...props }) {
                     className={`${theme === 'light' ? 'theme-color-light theme-bg-dark' : 'theme-color-dark theme-bg-light'}`}
                     rel="noopener noreferrer"
                 >
-                    Github Repo
+                    <BsGithub /> Github Repo
                 </a>
             </div>
 

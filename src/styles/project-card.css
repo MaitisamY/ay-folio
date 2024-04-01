@@ -92,3 +92,18 @@
     opacity: var(--opacity-10);
     transform: scale(1.04);
 }
+
+@media screen and (max-width: 768px) {
+    .project-card-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-card {
+        align-items: center;
+        justify-content: center;
+        width: var(--width-90);
+    }
+}

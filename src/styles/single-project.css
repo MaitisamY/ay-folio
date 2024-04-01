@@ -52,13 +52,14 @@
 .single-project-card .link-holder {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     margin: var(--margin-0);
     padding: var(--padding-0);
     box-sizing: border-box;
     gap: 20px;
-    transform: translate(10%, -150%);
+    transform: translate(0px, -75px);
+    width: var(--width-100);
 }
 
 .single-project-card .link-holder a {
@@ -72,6 +73,11 @@
     text-decoration: none;
     cursor: pointer;
     box-shadow: var(--shadow-s);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .single-project-card .link-holder a:hover,
@@ -79,4 +85,11 @@
 .single-project-card .link-holder a:focus,
 .single-project-card .link-holder a:visited {
     opacity: var(--opacity-10);
+}
+
+@media screen and (max-width: 768px) {
+    .single-project-card .link-holder {
+        margin: var(--margin-4) var(--margin-0);
+        transform: translate(0px, 10px);
+    }
 }

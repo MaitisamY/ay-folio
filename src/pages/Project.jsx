@@ -87,13 +87,13 @@ function Project() {
                         className={`navigator-left ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`}
                         onClick={() => handleNavigate('/projects')}
                     >
-                        <span><BsChevronLeft size={60} /></span> Projects
+                        <span><BsChevronLeft /></span> <i>Projects</i>
                     </a>
                     <a
                         className={`navigator-right ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`}
                         onClick={() => handleNavigate('/skills')}
                     >
-                        Skills <span><BsChevronRight size={60} /></span>
+                        <i>Skills</i> <span><BsChevronRight /></span>
                     </a>
                 </>
             )}

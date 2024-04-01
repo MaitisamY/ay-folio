@@ -8,7 +8,7 @@ import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 
 import Header from '../partials/Header';
 import Main from '../partials/Main';
-
+import SkillContainer from '../components/SkillContainer';
 
 
 function Skills() {
@@ -34,7 +34,7 @@ function Skills() {
         <div className={`page-container fadeIn ${slideOut ? `slide-out-${slideDirection}` : ''}`}>
             <Header />
             <Main>
-                
+                <SkillContainer />
             </Main>
             {!slideOut && (
                 <>
@@ -42,13 +42,13 @@ function Skills() {
                         className={`navigator-left ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`}
                         onClick={() => handleNavigate('/projects')}
                     >
-                        <span><BsChevronLeft size={60} /></span> Projects
+                        <span><BsChevronLeft /></span> <i>Projects</i>
                     </a>
                     <a
                         className={`navigator-right ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`}
                         onClick={() => handleNavigate('/contact')}
                     >
-                        Contact <span><BsChevronRight size={60} /></span>
+                        <i>Contact</i> <span><BsChevronRight /></span>
                     </a>
                 </>
             )}

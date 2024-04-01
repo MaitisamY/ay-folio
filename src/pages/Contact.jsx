@@ -8,7 +8,7 @@ import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 
 import Header from '../partials/Header';
 import Main from '../partials/Main';
-
+import ContactContainer from '../components/ContactContainer';
 
 function Contact() {
 
@@ -33,7 +33,7 @@ function Contact() {
         <div className={`page-container fadeIn ${slideOut ? `slide-out-${slideDirection}` : ''}`}>
             <Header />
             <Main>
-                
+                <ContactContainer />
             </Main>
             {!slideOut && (
                 <>
@@ -41,13 +41,13 @@ function Contact() {
                         className={`navigator-left ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`}
                         onClick={() => handleNavigate('/skills')}
                     >
-                        <span><BsChevronLeft size={60} /></span> Skills
+                        <span><BsChevronLeft /></span> <i>Skills</i>
                     </a>
                     <a
                         className={`navigator-right ${theme === 'light' ? 'theme-color-dark' : 'theme-color-light'}`}
                         onClick={() => handleNavigate('/')}
                     >
-                        Home <span><BsChevronRight size={60} /></span>
+                        <i>Home</i> <span><BsChevronRight /></span>
                     </a>
                 </>
             )}
