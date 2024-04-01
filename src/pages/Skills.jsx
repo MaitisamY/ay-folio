@@ -9,6 +9,7 @@ import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import Header from '../partials/Header';
 import Main from '../partials/Main';
 import SkillContainer from '../components/SkillContainer';
+import Footer from '../partials/Footer.jsx';
 
 
 function Skills() {
@@ -52,6 +53,7 @@ function Skills() {
                     </a>
                 </>
             )}
+            <Footer />
         </div>
     )
 }

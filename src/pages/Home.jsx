@@ -11,6 +11,7 @@ import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import Header from '../partials/Header';
 import Main from '../partials/Main';
 import IntroBlock from '../components/IntroBlock';
+import Footer from '../partials/Footer';
 
 import { PROFILE } from '../data/dataStore.js';
 
@@ -102,6 +103,7 @@ function Home() {
                     </a>
                 </>
             )}
+            <Footer />
         </div>
     )
 }

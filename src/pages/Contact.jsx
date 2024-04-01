@@ -9,6 +9,7 @@ import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import Header from '../partials/Header';
 import Main from '../partials/Main';
 import ContactContainer from '../components/ContactContainer';
+import Footer from '../partials/Footer';
 
 function Contact() {
 
@@ -51,6 +52,7 @@ function Contact() {
                     </a>
                 </>
             )}
+            <Footer />
         </div>
     )
 }

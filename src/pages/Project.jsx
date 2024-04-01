@@ -11,6 +11,7 @@ import Header from '../partials/Header';
 import Main from '../partials/Main';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import SingleProject from '../components/SingleProject';
+import Footer from '../partials/Footer.jsx';
 
 import { PROJECTS } from '../data/dataStore';
 
@@ -97,6 +98,7 @@ function Project() {
                     </a>
                 </>
             )}
+            <Footer />
         </div>
     )
 }

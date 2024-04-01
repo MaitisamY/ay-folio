@@ -1301,3 +1301,19 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: var(--margin-2) var(--margin-0) var(--margin-2) var(--margin-0);
+    padding: var(--padding-4);
+    box-sizing: border-box;
+    width: var(--width-100);
+    height: var(--height-auto);
+}
+
+footer p {
+    font-family: var(--font-exo-2)
+}

@@ -9,6 +9,7 @@ import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import Header from '../partials/Header';
 import Main from '../partials/Main';
 import ProjectContainer from '../components/ProjectContainer';
+import Footer from '../partials/Footer';
 
 function Projects() {
     
@@ -51,6 +52,7 @@ function Projects() {
                     </a>
                 </>
             )}
+            <Footer />
         </div>
     )
 }
