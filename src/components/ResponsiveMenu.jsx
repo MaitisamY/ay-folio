@@ -32,13 +32,13 @@ export default function ResponsiveMenu() {
                                 </Link>
                             </li>
                             <li>
-                                <Link className="link" to="/skills">
-                                    Skills
+                                <Link className="link" to="/projects">
+                                    Projects
                                 </Link>
                             </li>
                             <li>
-                                <Link className="link" to="/projects">
-                                    Projects
+                                <Link className="link" to="/skills">
+                                    Skills
                                 </Link>
                             </li>
                             <li>

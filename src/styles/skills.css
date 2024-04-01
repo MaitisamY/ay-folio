@@ -68,3 +68,9 @@
 .skill-card span.github:hover {
     color: #333;
 }
+
+@media screen and (max-width: 768px) {
+    .skill-container {
+        padding: var(--padding-0) var(--padding-4);
+    }
+}
