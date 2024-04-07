@@ -55,7 +55,7 @@ function Project() {
         }
     
         getProject();
-    }, [project]);
+    }, []);
 
     document.title = `Project - ${import.meta.env.VITE_SITE_TITLE}`;
 
@@ -70,12 +70,10 @@ function Project() {
                     </div>
                 ) : (
                     <SingleProject 
-                        id={project?.id}
                         projectName={project?.name}
                         projectImage={project?.image}
                         projectImageAlt={project?.image_alt}
                         projectURL={project?.url}
-                        projectLink={project?.view_link}
                         projectGithub={project?.github}
                         projectDescription={project?.description}
                     />

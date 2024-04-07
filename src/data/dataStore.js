@@ -63,7 +63,7 @@ export const PROJECTS = [
         description: `AuthSpot provides a robust and customizable solution for implementing secure user authentication within 
         your web applications. It is powered by React and bundled with Vite for optimal performance. This documentation will 
         guide you through the folder structure, key features, customization options, and integration process.`,
-        github: null,
+        github: 'null',
         image: "login-system.png",
         image_alt: "AuthSpot Application's image",
         name: "AuthSpot",
