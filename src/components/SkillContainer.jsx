@@ -23,12 +23,12 @@ export default function SkillContainer() {
             <div className="skill-card">
                 <span className="node"><FaNodeJs /></span>
             </div>
-            <div className="skill-card">
+{/*             <div className="skill-card">
                 <span className="laravel"><FaLaravel /></span>
             </div>
             <div className="skill-card">
                 <span className="php"><FaPhp /></span>
-            </div>
+            </div> */}
             <div className="skill-card">
                 <span className="github"><FaGithub /></span>
             </div>
