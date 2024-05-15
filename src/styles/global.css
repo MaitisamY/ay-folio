@@ -1142,6 +1142,7 @@ body {
     width: var(--width-100);
     overflow-x: hidden;
     overflow-y: auto;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #app {
