@@ -6,7 +6,7 @@ import { BsSun, BsMoon } from 'react-icons/bs'
 import { useLocation } from 'react-router-dom'
 
 import Image from '../components/Image'
-import LOGO from '../assets/profile-img.png'
+import LOGO from '../assets/profile.png'
 import ResponsiveMenu from '../components/ResponsiveMenu';              
 
 export default function Header() {
