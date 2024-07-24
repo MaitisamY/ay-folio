@@ -2,7 +2,7 @@
 
 export const PROFILE = {
         name: "Aitisam Yaseen",
-        designation: "Web Developer",
+        designation: "Fullstack Developer",
         description: [
             `I specialize in frontend design and full-stack development, boasting expertise in HTML, CSS, JavaScript, 
             as well as frontend frameworks and libraries such as React. Additionally, I am proficient in backend 
@@ -20,15 +20,13 @@ export const PROFILE = {
 
 export const CODE_BLOCKS = {
     HTML: [
-        '<div>', '<p>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<span>', '<a>', '<ul>', '<li>', '<ol>', '<table>', '<tr>',
-        '<td>', '<th>', '<thead>', '<tbody>', '<tfoot>', '<form>', '<input>', '<label>', '<select>', '<option>', '<textarea>',
-        '<button>', '<header>', '<main>', '<section>', '<article>', '<aside>', '<nav>', '<figure>', '<figcaption>', '<details>', 
-        '<summary>', '<menu>', '<footer>', '<i>', '<br />', '<hr />', '<img>', '<video>', '<audio>', '<source>', '<canvas>', '<map>', 
-        '<area>', '<object>', '<embed>', '<param>', '<blockquote>', '<cite>', '<strong>',
+        '<table>', '<thead>', '<tbody>', '<tfoot>', '<input>', '<label>', '<select>', '<option>',
+        '<button>', '<header>', '<main>', '<section>', '<article>', '<aside>', '<figure>', '<details>', 
+        '<summary>', '<footer>', '<video>', '<audio>', '<source>', '<canvas>', '<object>', '<embed>', '<param>', '<strong>',
     ],
     REACT: [
-        'useState', 'useEffect', 'useRef', 'useCallback', 'useMemo', 'useReducer', 'useContext', 'useLayoutEffect', 'useRef', 
-        'useMemo', 'useCallback', 'forwardRef', 'useTransition', 'useDeferredValue', 'useSyncExternalStore', 
+        'useState', 'useEffect', 'useRef', 'useCallback', 'useMemo', 'useReducer', 'useContext', 'useRef', 
+        'useMemo', 'useCallback', 'forwardRef', 'useTransition', 
     ]
 }
 
@@ -83,5 +81,25 @@ export const PROJECTS = [
         url: "https://flashcard-quiz-blush.vercel.app/",
         view_link: "flashcard-quiz",
         id: 'l90SByUeGEsWHd5BkiAz'
+    },
+    {
+        description: `
+            As part of a dynamic development team, I played a key role in crafting the frontend interface for acutting-edge cryptocurrency market web application. 
+            Leveraging HTML, CSS, and vanilla JavaScriptwithin the CodeIgniter framework, I contributed to creating a user-friendly and visually appealingplatform. 
+            Our application provided users with real-time cryptocurrency prices sourced from all majormarkets, coupled with comprehensive market capitalization data. 
+            Users could effortlessly stay informedabout cryptocurrency price movements, empowering them to make timely investment decisions. 
+            Iintegrated interactive elements, ensuring seamless navigation and engaging user experiences. 
+            Bycollaborating closely with backend developers and designers, 
+            I helped deliver a polished product that met the 
+            project's objectives and exceeded 
+            user expectations.
+        `,
+        github: "null",
+        image: "soanod.png",
+        image_alt: "Soanod Website's First Look",
+        name: "Soanod",
+        url: "https://soanod.com/",
+        view_link: "soanod",
+        id: '2zAvDySdCw91gheFRoVf'
     }
 ]

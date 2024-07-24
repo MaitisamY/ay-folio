@@ -9,7 +9,7 @@ main {
     margin: var(--margin-0);
     padding: var(--padding-0);
     box-sizing: border-box;
-    min-height: var(--height-80-vh);
+    min-height: 84vh;
 }
 
 @media screen and (max-width: 768px) {

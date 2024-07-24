@@ -8,7 +8,7 @@
     padding: var(--padding-0) var(--padding-0) var(--padding-4) var(--padding-0);
     box-sizing: border-box;
     height: var(--height-auto);
-    width: var(--width-100);
+    width: var(--width-95);
     gap: 0;
     border-radius: var(--border-radius-xl);
 }
@@ -78,6 +78,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    white-space: nowrap;
 }
 
 .single-project-card .link-holder a:hover,
@@ -87,9 +88,37 @@
     opacity: var(--opacity-10);
 }
 
+@media screen and (max-width: 949px) {
+    .single-project-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .single-project-card .product-details {
+        width: 90%;
+    }
+
+    .single-project-card .image-container {
+        width: 90%;
+        height: auto;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .single-project-card .link-holder {
         margin: var(--margin-4) var(--margin-0);
         transform: translate(0px, 10px);
+    }
+}
+
+@media screen and (max-width: 384px) {
+    .single-project-card .link-holder {
+        flex-direction: column;
+    }
+
+    .single-project-card .link-holder a {
+        width: 85%;
     }
 }

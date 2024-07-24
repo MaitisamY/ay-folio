@@ -8,13 +8,13 @@
     padding: var(--padding-0);
     box-sizing: border-box;
     height: var(--height-auto);
-    width: var(--width-100);
+    width: var(--width-95);
     gap: 30px;
 }
 
 .contact-container p {
     font-family: var(--font-open-sans);
-    font-size: var(--font-size-xl);
+    font-size: clamp(var(--font-size-m), 11vw, var(--font-size-3xl));
 }
 
 .contact-container .link-holder {
@@ -57,5 +57,17 @@
 @media screen and (max-width: 768px) {
     .contact-container {
         padding: var(--padding-4);
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 384px) {
+    .contact-container .link-holder {
+        flex-direction: column;
+        width: var(--width-95);
+    }
+
+    .contact-container .link-holder a {
+        width: 100%;
     }
 }

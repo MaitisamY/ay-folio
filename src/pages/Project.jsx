@@ -38,24 +38,37 @@ function Project() {
 
     useEffect(() => {
         async function getProject() {
-            try {
-                const docRef = doc(db, "projects", id);
-                const docSnapshot = await getDoc(docRef);
-                if (docSnapshot.exists()) {
-                    setProject({ id: docSnapshot.id, ...docSnapshot.data() });
-                    console.log("Document data:", docSnapshot.data());
-                } else {
-                    console.log("No such document!");
-                    setProject(thisProject); 
+            const timeout = new Promise((_, reject) => 
+                setTimeout(() => reject(new Error("Request timed out")), 6000)
+            );
+    
+            const fetchData = async () => {
+                try {
+                    const docRef = doc(db, "projects", id);
+                    const docSnapshot = await getDoc(docRef);
+                    if (docSnapshot.exists()) {
+                        setProject({ id: docSnapshot.id, ...docSnapshot.data() });
+                        console.log("Document data:", docSnapshot.data());
+                    } else {
+                        console.log("No such document!");
+                        setProject(thisProject);
+                    }
+                } catch (error) {
+                    throw new Error("Error fetching profile:", error);
                 }
+            };
+    
+            try {
+                await Promise.race([fetchData(), timeout]);
             } catch (error) {
-                console.error("Error fetching profile:", error);
-                setProject(thisProject); 
+                console.error(error.message);
+                setProject(thisProject);
             }
         }
     
         getProject();
     }, []);
+    
 
     document.title = `Project - ${import.meta.env.VITE_SITE_TITLE}`;
 

@@ -298,6 +298,9 @@
     --font-size-4xl: 64px;
     --font-size-5xl: 96px;
     --font-size-6xl: 128px;
+    --font-size-7xl: 192px;
+    --font-size-8xl: 256px;
+    --font-size-9xl: 384px;
 
     /* FONT WEIGHTS */
     --font-weight-thin: 200;
@@ -1268,17 +1271,6 @@ body {
     border-top-color: var(--bg-color-theme-dark);
     animation: rotate 1s linear infinite;
     place-self: center;
-}
-
-code {
-    position: absolute;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-    font-size: var(--font-size-m);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: var(--letter-spacing-3xl);
-    line-height: var(--line-height-4xl);
-    z-index: -1;
-    opacity: var(--opacity-02);
 }
 
 h1,

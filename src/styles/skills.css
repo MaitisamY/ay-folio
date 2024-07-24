@@ -14,23 +14,50 @@
 }
 
 .skill-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: var(--margin-0);
-    padding: var(--padding-0) var(--padding-0) var(--padding-4) var(--padding-0);
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    height: var(--height-auto);
-    width: var(--width-30);
-    gap: 10px;
-    border-radius: var(--border-radius-xl);
+    height: fit-content;
+    width: fit-content;
+    gap: 20px 20px;
 }
 
 .skill-card span {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-6xl);
     margin: 0;
     padding: 0;
+}
+
+.skill-card-tooltip {
+    display: none;
+}
+
+.skill-card:hover .skill-card-tooltip {
+    display: block;
+    width: 100%;
+    height: max-content;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    transform: translateX(-50%, 50%);
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: var(--font-open-sans);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-medium);
+    background: rgba(red, green, blue, 100%);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-s);
+    z-index: 99;
+    transition: all 0.5s ease-in-out;
+    animation: wave 0.5s ease-in-out;
 }
 
 .skill-card span.html:hover {
@@ -41,12 +68,20 @@
     color: #264de4;
 }
 
+.skill-card span.sass:hover {
+    color: #cd6799;
+}
+
 .skill-card span.bootstrap:hover {
     color: #563d7c;
 }
 
 .skill-card span.js:hover {
     color: #f0db4f;
+}
+
+.skill-card span.jquery:hover {
+    color: #0769ad;
 }
 
 .skill-card span.react:hover {
@@ -63,6 +98,30 @@
 
 .skill-card .php:hover {
     color: #8993be;
+}
+
+.skill-card .postgres:hover {
+    color: #336791;
+}
+
+.skill-card span.mongodb:hover {
+    color: #47a248;
+}
+
+.skill-card span.mysql:hover {
+    color: #00758f;
+}
+
+.skill-card span.firebase:hover {
+    color: #ffca28;
+}
+
+.skill-card span.git:hover {
+    color: #f1502f;
+}
+
+.skill-card span.docker:hover {
+    color: #0db7ed;
 }
 
 .skill-card span.github:hover {

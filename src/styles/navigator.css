@@ -1,7 +1,7 @@
 .navigator-right {
-    position: absolute;
-    top: var(--top-50);
-    right: var(--right-1);
+    position: fixed;
+    top: 48vh;
+    right: 1%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,12 +15,13 @@
     font-family: var(--font-exo-2);
     background-color: var(--bg-color-transparent);
     border: none;
+    z-index: 99;
 }
 
 .navigator-left {
-    position: absolute;
-    top: var(--top-50);
-    left: var(--left-1);
+    position: fixed;
+    top: 48vh;
+    left: 1%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -34,6 +35,7 @@
     font-family: var(--font-exo-2);
     background-color: var(--bg-color-transparent);
     border: none;
+    z-index: 99;
 }
 
 .navigator-right span, 

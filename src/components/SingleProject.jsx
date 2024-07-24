@@ -14,7 +14,6 @@ export default function SingleProject({
  }) {
 
     const { theme } = useTheme();
-    console.log(projectGithub)
 
     return (
         <div className="single-project-card">
