@@ -93,9 +93,9 @@ export default function ProjectCard({
                             onClick={onClose} 
                             style={{
                                 position: 'absolute',
-                                top: '-2%',
-                                right: '-2%',
-                                padding: '1rem',
+                                top: '-1%',
+                                right: '-1%',
+                                padding: '5px',
                                 border: 'none',
                                 borderRadius: '50px',
                                 cursor: 'pointer',
