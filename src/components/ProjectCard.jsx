@@ -76,7 +76,6 @@ export default function ProjectCard({
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            overflow: 'hidden',
                             width: '80%',
                             height: 'auto',
                             borderRadius: 'var(--border-radius-xl)',
@@ -94,13 +93,17 @@ export default function ProjectCard({
                             onClick={onClose} 
                             style={{
                                 position: 'absolute',
-                                top: 0,
-                                right: 0,
+                                top: '-2%',
+                                right: '-2%',
                                 padding: '1rem',
                                 border: 'none',
-                                borderRadius: '0 var(--border-radius-xl) 0 50px',
+                                borderRadius: '50px',
                                 cursor: 'pointer',
                                 fontSize: '2.2rem',
+                                zIndex: 99999,
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
                             }}
                         >
                             <BsX />
